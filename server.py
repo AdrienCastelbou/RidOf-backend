@@ -2,13 +2,17 @@ from crypt import methods
 from dataclasses import dataclass
 from flask import Flask, request
 import mysql.connector
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
 
 app = Flask(__name__)
 db_rid_of = mysql.connector.connect(
-  host="45.63.119.169",
-  user="python",
-  password="password",
-  database="ridof"
+  host=os.getenv("DB_HOST"),
+  user=os.getenv("DB_USER"),
+  password=os.getenv("DB_PASSWORD"),
+  database=os.getenv("DB_NAME")
 )
 itemcursor = db_rid_of.cursor(dictionary=True)
 
