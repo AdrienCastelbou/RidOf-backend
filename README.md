@@ -31,8 +31,9 @@ $ pip install -r requirements.txt
 ```bash
 $ export FLASK_APP=server FLASK_ENV=development
 ```
+7. create and fill your .env file
 
-7. Run the server
+8. Run the server
 ```bash
 $ flask run
 ```
