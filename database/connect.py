@@ -9,8 +9,11 @@ mydb = mysql.connector.connect(
 
 mycursor = mydb.cursor()
 
-mycursor.execute("SHOW TABLES")
+sql = "SELECT * FROM items WHERE name ='phone'"
 
+mycursor.execute(sql)
 
-for x in mycursor:
+myresult = mycursor.fetchall()
+
+for x in myresult:
   print(x)
