@@ -26,19 +26,15 @@ $ source venv/bin/activate
 ```bash
 $ pip install -r requirements.txt
 ```
+
 6. Install imageai without dependencies
 ```bash
 $ pip3 install --no-deps imageai
 ``` 
 
-7. Create env variables for the Flask app
+7. Run the server
 ```bash
-$ export FLASK_APP=server FLASK_ENV=development
-```
-
-8. Run the server
-```bash
-$ flask run
+$ python server.py
 ```
 
 9. Try to access to it at [http://127.0.0.1:5000/](http://127.0.0.1:5000/)
