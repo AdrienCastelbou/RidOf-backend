@@ -38,4 +38,4 @@ $ export FLASK_APP=server FLASK_ENV=development
 $ flask run
 ```
 
-8. Try to access to it at [http://127.0.0.1:5000/](http://127.0.0.1:5000/)
+9. Try to access to it at [http://127.0.0.1:5000/](http://127.0.0.1:5000/)
