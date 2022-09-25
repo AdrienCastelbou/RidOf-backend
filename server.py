@@ -18,7 +18,7 @@ db_rid_of = mysql.connector.connect(
   database=os.getenv("DB_NAME")
 )
 itemcursor = db_rid_of.cursor(dictionary=True)
-items_detector = init_detector()
+items_detector = init_detector(os.getenv("MODEL_PATH"))
 
 
 @app.route('/detect_items', methods=['POST'])
