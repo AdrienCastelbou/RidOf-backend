@@ -1,5 +1,4 @@
-from crypt import methods
-from flask import Flask, request, jsonify
+from flask import Flask, request
 from PIL import Image
 from itemsDetections import init_detector
 import json 
@@ -11,6 +10,7 @@ items_detector = init_detector()
 
 @app.route('/detect_items', methods=['POST'])
 def detect_items():
+    print(request.data)
     file = request.files['image']
     file.save("target.jpeg")
     img = Image.open("target.jpeg")
