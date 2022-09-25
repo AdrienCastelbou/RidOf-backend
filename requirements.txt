@@ -1,3 +1,17 @@
 flask
+#YOLO packages
+keras
+numpy
+Pillow
+scipy
+h5py
+matplotlib
+opencv-python
+keras-resnet
+tensorflow-macos
+tensorflow-metal
+protobuf==3.19
+
+
 mysql-connector-python
 python-dotenv
