@@ -1,5 +1,4 @@
 flask
-
 #YOLO packages
 keras
 numpy
@@ -12,4 +11,7 @@ keras-resnet
 tensorflow-macos
 tensorflow-metal
 protobuf==3.19
-#imageAI
+
+
+mysql-connector-python
+python-dotenv

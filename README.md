@@ -32,7 +32,9 @@ $ pip install -r requirements.txt
 $ pip3 install --no-deps imageai
 ``` 
 
-7. Run the server
+7. create and fill your .env file
+
+8. Run the server
 ```bash
 $ python server.py
 ```
