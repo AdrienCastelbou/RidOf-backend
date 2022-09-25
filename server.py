@@ -40,7 +40,7 @@ def detect_items():
         resized_img = img.crop(box=obj["box_points"])
         resized_img.save(byteIO, format='JPEG')
         byteArr = byteIO.getvalue()
-        items_list.append({'name': obj["name"], 'img': base64.encodebytes(byteArr).decode()})
+        items_list.append({'name': obj["name"]})
     json_dump = json.dumps({"items": items_list})
     return json_dump
 
