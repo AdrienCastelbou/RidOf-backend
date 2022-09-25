@@ -1,4 +1,5 @@
 from flask import Flask, request
+from flask_cors import CORS
 import mysql.connector
 from dotenv import load_dotenv
 import os
@@ -11,6 +12,8 @@ import base64
 load_dotenv()
 
 app = Flask(__name__)
+CORS(app)
+
 db_rid_of = mysql.connector.connect(
   host=os.getenv("DB_HOST"),
   user=os.getenv("DB_USER"),
@@ -23,9 +26,12 @@ items_detector = init_detector(os.getenv("MODEL_PATH"))
 
 @app.route('/detect_items', methods=['POST'])
 def detect_items():
-    print(request.data)
-    file = request.files['image']
-    file.save("target.jpeg")
+    img_data = request.data[23:]
+    print(img_data)
+    print(type(img_data))
+    with open("target.jpeg", "wb") as fh:
+        fh.write(base64.b64decode(img_data))
+        fh.close()
     img = Image.open("target.jpeg")
     detected_obj = items_detector.detectObjectsFromImage(input_image="target.jpeg", output_image_path="target_output.jpeg", minimum_percentage_probability = 80)
     items_list = []
@@ -66,7 +72,6 @@ def get_items():
             names += f" OR name = '{item}'"
         i += 1
     item_request = "SELECT * FROM items INNER JOIN cats ON items.cats_id = cats.id WHERE " + names
-    print(item_request)
     itemcursor.execute(item_request)
     data = itemcursor.fetchall()
     return json.dumps({"data": data})
