@@ -1,4 +1,5 @@
 flask
+flask-cors
 #YOLO packages
 keras
 numpy
