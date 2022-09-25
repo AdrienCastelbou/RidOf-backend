@@ -32,11 +32,16 @@ $ pip install -r requirements.txt
 $ pip3 install --no-deps imageai
 ``` 
 
-7. create and fill your .env file
+7. DL one pretrained model, for example [yolo.h5](https://github.com/OlafenwaMoses/ImageAI/releases/tag/1.0/)
 
-8. Run the server
+8. copy and rename .env.example to .env and fill it, with the path of your model
+```bash
+$ cp .env.example .env
+``` 
+
+9. Run the server
 ```bash
 $ python server.py
 ```
 
-9. Try to access to it at [http://127.0.0.1:5000/](http://127.0.0.1:5000/)
+10. Try to access to it at [http://127.0.0.1:5000/](http://127.0.0.1:5000/)
